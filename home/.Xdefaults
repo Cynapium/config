@@ -21,7 +21,7 @@ URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.underlineURLs:    true
 
 URxvt.inheritPixmap:    true
-URxvt.shading:          21
+URxvt.shading:          30
 URxvt.depth:            42
 
 
@@ -30,7 +30,7 @@ URxvt.depth:            42
 !-----------------------------------------------------------------------------
 
 ! Black
-*color0:    		#2E3436	
+*color0:    		#111111
 *color8:    		#555735
 
 ! Red
@@ -46,8 +46,8 @@ URxvt.depth:            42
 *color11:   		#FCE94F
 
 ! Blue
-*color12:   		#729FCF
-*color4:    		#2e70b8
+*color12:   		#2E84BC
+*color4:    		#305EB4
 
 ! Magenta
 *color5:    		#75507B

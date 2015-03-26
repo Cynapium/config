@@ -123,6 +123,24 @@ bindsym $mod+z                  workspace back_and_forth
 
 
 ##############################################################################
+# Windows Properties
+##############################################################################
+
+# Remove the border
+for_window [class="(?i)urxvt"] border 1pixel
+for_window [class="(?i)spotify"] border 1pixel
+for_window [class="(?i)firefox"] border 1pixel
+
+# Assigments of programs
+assign [class="(?i)spotify"] 0
+assign [class="(?i)chromium"] 2
+assign [class="(?i)firefox"] 2
+
+# Assignments of keys
+bindsym $mod+m [class="(?i)spotify"] focus
+
+
+##############################################################################
 # Function Keys Shortcuts
 ##############################################################################
 
@@ -174,14 +192,37 @@ bindsym $mod+r mode "resize"
 
 
 
+set $color1 #1C386C
+set $color2 #264B90
+
+#set $color1 #3C0709
+#set $color2 #4F1F21
+#set $color4 #484671
+#set $color3 #8D51CF
+#set $white  #FFFFFF
+#
+## Class                         border  backgr. text    indicator
+client.focused                  $color2 $color1 #dddddd $color1
+client.focused_inactive         #333333 #5f676a $white  #484e50
+client.unfocused                #333333 #222222 #888888 #292d2e
+client.urgent                   #2f343a #900000 $white  #900000
+
+
 ##############################################################################
 # Status bar
 ##############################################################################
 
-bar {
-	position top
-        status_command i3status
-}
+#bar {
+#    position top
+#    status_command exec ~/tools/lifebar/lifebar
+#
+#    colors
+#    {
+#        background          #000000
+#        statusline          #ffffff
+#        focused_workspace   $color2 $color4 #ffffff
+#    }
+#}
 
-
-
+exec ~/tools/lifebar/lifebar
+exec i3-sensible-terminal
