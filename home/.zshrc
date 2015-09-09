@@ -40,6 +40,7 @@ alias la='ls -A'
 alias tree='tree -C' 				# Enable colors in tree
 
 # Editors
+alias emacs='emacs -nw'
 alias e='emacs -nw'
 alias v='vim'
 
@@ -65,9 +66,14 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
+# Networks
+alias ns='sudo netctl start stevens'
+alias nh='sudo netctl start home'
+
 # Others
 alias df='df -h'
 alias yaourt='yaourt --noconfirm'
+alias n='sudo netctl start'
 
 
 ##############################################################################

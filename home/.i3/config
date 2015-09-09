@@ -36,6 +36,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+bindsym $mod+Shift+t exec ~/tools/lifebar/lifebar
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -139,6 +141,9 @@ assign [class="(?i)firefox"] 2
 # Assignments of keys
 bindsym $mod+m [class="(?i)spotify"] focus
 
+# Floating windows
+for_window [class="(?i)klavaro"] floating enable
+
 
 ##############################################################################
 # Function Keys Shortcuts
@@ -149,8 +154,8 @@ bindsym $mod+F1                 exec slimlock
 bindsym XF86Sleep               exec systemctl suspend; exec slimlock
 
 # Keyboard brightness
-bindsym XF86KbdBrightnessDown	exec asus-kbd-backlight down
-bindsym XF86KbdBrightnessUp	exec asus-kbd-backlight up
+bindsym XF86KbdBrightnessDown	exec sudo asus-kbd-backlight down
+bindsym XF86KbdBrightnessUp	exec sudo asus-kbd-backlight up
 
 # LCD Backlight
 bindsym XF86MonBrightnessDown	exec xbacklight -dec 10
@@ -212,17 +217,15 @@ client.urgent                   #2f343a #900000 $white  #900000
 # Status bar
 ##############################################################################
 
-#bar {
-#    position top
-#    status_command exec ~/tools/lifebar/lifebar
-#
-#    colors
-#    {
-#        background          #000000
-#        statusline          #ffffff
-#        focused_workspace   $color2 $color4 #ffffff
-#    }
-#}
+bar {
+    position top
 
-exec ~/tools/lifebar/lifebar
+    colors
+    {
+        background          #000000
+        statusline          #ffffff
+        focused_workspace   $color2 $color4 #ffffff
+    }
+}
+
 exec i3-sensible-terminal
